@@ -30,9 +30,13 @@ Module RealPP
         Dim Lines As New List(Of String)
         Dim LastLine As String = Nothing
         Using SR As StreamReader = New StreamReader(path)
-            Do While SR.Peek > -1
-                Lines.Add(SR.ReadLine)
-            Loop
+            Try
+                Do While SR.Peek > -1
+                    Lines.Add(SR.ReadLine)
+                Loop
+            Catch ex As Exception
+                MsgBox("Error Occurred during decoding the file of " & mesName)
+            End Try
         End Using
         LastLine = Lines.Last
         If Lines.IndexOf("PPAP,1") > 0 Then isPPAP = True

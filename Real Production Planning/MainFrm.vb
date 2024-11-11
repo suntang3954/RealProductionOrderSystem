@@ -13,8 +13,9 @@ Public Class MainFrm
             'Ver2.0
             'remove FSW created function, change FSW delete function to just stop and need to reload orders
             'upgrade to fit ONE-ERP auto generate version
+            'Ver3.1: add TG380,TG490,TT450 and fix the wrong 600a0312 Description, log the decoding process of the mes files.
 
-            Dim ver As String = " Ver2.0"
+            Dim ver As String = " Ver3.1"
             Me.Text = Me.Text & ver
 
             BtnUpload.Visible = False

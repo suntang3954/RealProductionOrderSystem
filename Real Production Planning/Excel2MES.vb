@@ -136,11 +136,11 @@ Module Excel2MES
                     Case "600A0311"
                         iDesc = "TTS400HHS20020X0XXS413"
                     Case "600A0312"
-                        iDesc = "TT400HHH20020X0XXS413"
+                        iDesc = "TTS400HHH20020X0XXS413"
                     Case "600A0313"
-                        iDesc = "TT700HHS20020X0XXS413"
+                        iDesc = "TTS700HHS20020X0XXS413"
                     Case "600A0314"
-                        iDesc = "TT700HHH20020X0XXS413"
+                        iDesc = "TTS700HHH20020X0XXS413"
                 End Select
             Else
                 iDesc = iMaterial.Substring(iMaterial.IndexOf(" ") + 1, iMaterial.Length - 1 - iPN.Length)
@@ -289,6 +289,12 @@ Module Excel2MES
                     Case "TG390"
                         filename = series & "-" & iVoltageStr & "-" & iWorkOrder & "-" & i & "OF" & iQty
                     Case "TG520"
+                        filename = series & "-" & iVoltageStr & "-" & iWorkOrder & "-" & i & "OF" & iQty
+                    Case "TG380"
+                        filename = series & "-" & iVoltageStr & "-" & iWorkOrder & "-" & i & "OF" & iQty
+                    Case "TG490"
+                        filename = series & "-" & iVoltageStr & "-" & iWorkOrder & "-" & i & "OF" & iQty
+                    Case "TT450"
                         filename = series & "-" & iVoltageStr & "-" & iWorkOrder & "-" & i & "OF" & iQty
                     Case "COMPR"
                         series = Mid(iNamePlateDesc, 23, 6)
