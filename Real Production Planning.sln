@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Real Production Planning", "Real Production Planning\Real Production Planning.vbproj", "{AC101F3F-0A85-48DC-8474-2B05F715D632}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC101F3F-0A85-48DC-8474-2B05F715D632}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{AC101F3F-0A85-48DC-8474-2B05F715D632}.Debug|x64.Build.0 = Debug|Any CPU
+		{AC101F3F-0A85-48DC-8474-2B05F715D632}.Release|x64.ActiveCfg = Release|Any CPU
+		{AC101F3F-0A85-48DC-8474-2B05F715D632}.Release|x64.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {65A2FCE7-5D57-4F6C-BC6D-75C02B363FE1}
+	EndGlobalSection
+EndGlobal
