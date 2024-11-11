@@ -433,7 +433,10 @@ Public Class MainFrm
     End Sub
 
     Private Sub GLV_ItemDrag(ByVal sender As Object, ByVal e As ItemDragEventArgs) Handles GLV_C.ItemDrag, GLV_S.ItemDrag
-
+        MsgBox("test")
+        If File.Exists(SP_Path & "lock.loc") Then
+            MsgBox("The Spare Parts Station is busy, Pls try it again after a little time.")
+        End If
         Dim glist As gListView = CType(sender, gListView)
         GListView_DragHelper(glist, DragDropEffects.Move)
         Squence = False

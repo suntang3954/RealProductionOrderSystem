@@ -63,6 +63,7 @@ Module RealPP
                 MainFrm.ToolStripProgressBar1.Maximum = mDirInfo.GetFiles("*.mes").Count
                 MainFrm.ToolStripProgressBar1.Value = 0
                 For Each mFileInfo In mDirInfo.GetFiles("*.mes")
+                    log.AppendText(mFileInfo.Name & vbCrLf)
                     ReadMES(mFileInfo.FullName, mFileInfo.Name)
                     listview.Items.Add(co_LVI_0)
                     mFileInfo.CopyTo(".\04_Pre_UpLoad\" & mFileInfo.Name, True)

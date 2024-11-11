@@ -111,9 +111,10 @@ Partial Class MainFrm
         Me.Panel1.Controls.Add(Me.GroupBox4)
         Me.Panel1.Controls.Add(Me.GroupBox3)
         Me.Panel1.Controls.Add(Me.GroupBox2)
-        Me.Panel1.Location = New System.Drawing.Point(12, 12)
+        Me.Panel1.Location = New System.Drawing.Point(16, 15)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(855, 163)
+        Me.Panel1.Size = New System.Drawing.Size(1140, 201)
         Me.Panel1.TabIndex = 0
         '
         'GroupBox4
@@ -121,18 +122,21 @@ Partial Class MainFrm
         Me.GroupBox4.Controls.Add(Me.Button1)
         Me.GroupBox4.Controls.Add(Me.ListBox2)
         Me.GroupBox4.Controls.Add(Me.BtnDetect)
-        Me.GroupBox4.Location = New System.Drawing.Point(3, 3)
+        Me.GroupBox4.Location = New System.Drawing.Point(4, 4)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(566, 66)
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox4.Size = New System.Drawing.Size(755, 81)
         Me.GroupBox4.TabIndex = 8
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "File Detector"
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(327, 17)
+        Me.Button1.Location = New System.Drawing.Point(436, 21)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(63, 43)
+        Me.Button1.Size = New System.Drawing.Size(84, 53)
         Me.Button1.TabIndex = 2
         Me.Button1.Text = "Test"
         Me.Button1.UseVisualStyleBackColor = True
@@ -140,17 +144,20 @@ Partial Class MainFrm
         'ListBox2
         '
         Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.Location = New System.Drawing.Point(82, 17)
+        Me.ListBox2.ItemHeight = 16
+        Me.ListBox2.Location = New System.Drawing.Point(109, 21)
+        Me.ListBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(239, 43)
+        Me.ListBox2.Size = New System.Drawing.Size(317, 52)
         Me.ListBox2.TabIndex = 1
         '
         'BtnDetect
         '
         Me.BtnDetect.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnDetect.Location = New System.Drawing.Point(6, 16)
+        Me.BtnDetect.Location = New System.Drawing.Point(8, 20)
+        Me.BtnDetect.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnDetect.Name = "BtnDetect"
-        Me.BtnDetect.Size = New System.Drawing.Size(70, 44)
+        Me.BtnDetect.Size = New System.Drawing.Size(93, 54)
         Me.BtnDetect.TabIndex = 0
         Me.BtnDetect.Text = "DETECT"
         Me.BtnDetect.UseVisualStyleBackColor = True
@@ -160,9 +167,11 @@ Partial Class MainFrm
         Me.GroupBox3.Controls.Add(Me.CB_Email)
         Me.GroupBox3.Controls.Add(Me.CB_PPAP)
         Me.GroupBox3.Controls.Add(Me.BtnStart)
-        Me.GroupBox3.Location = New System.Drawing.Point(575, 3)
+        Me.GroupBox3.Location = New System.Drawing.Point(767, 4)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(277, 66)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Size = New System.Drawing.Size(369, 81)
         Me.GroupBox3.TabIndex = 7
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "File Converter"
@@ -171,9 +180,10 @@ Partial Class MainFrm
         '
         Me.CB_Email.AutoSize = True
         Me.CB_Email.Enabled = False
-        Me.CB_Email.Location = New System.Drawing.Point(80, 43)
+        Me.CB_Email.Location = New System.Drawing.Point(107, 53)
+        Me.CB_Email.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.CB_Email.Name = "CB_Email"
-        Me.CB_Email.Size = New System.Drawing.Size(58, 17)
+        Me.CB_Email.Size = New System.Drawing.Size(70, 21)
         Me.CB_Email.TabIndex = 2
         Me.CB_Email.Text = "EMAIL"
         Me.CB_Email.UseVisualStyleBackColor = True
@@ -181,9 +191,10 @@ Partial Class MainFrm
         'CB_PPAP
         '
         Me.CB_PPAP.AutoSize = True
-        Me.CB_PPAP.Location = New System.Drawing.Point(80, 19)
+        Me.CB_PPAP.Location = New System.Drawing.Point(107, 23)
+        Me.CB_PPAP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.CB_PPAP.Name = "CB_PPAP"
-        Me.CB_PPAP.Size = New System.Drawing.Size(54, 17)
+        Me.CB_PPAP.Size = New System.Drawing.Size(66, 21)
         Me.CB_PPAP.TabIndex = 1
         Me.CB_PPAP.Text = "PPAP"
         Me.CB_PPAP.UseVisualStyleBackColor = True
@@ -191,9 +202,10 @@ Partial Class MainFrm
         'BtnStart
         '
         Me.BtnStart.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnStart.Location = New System.Drawing.Point(4, 16)
+        Me.BtnStart.Location = New System.Drawing.Point(5, 20)
+        Me.BtnStart.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnStart.Name = "BtnStart"
-        Me.BtnStart.Size = New System.Drawing.Size(70, 44)
+        Me.BtnStart.Size = New System.Drawing.Size(93, 54)
         Me.BtnStart.TabIndex = 0
         Me.BtnStart.Text = "START"
         Me.BtnStart.UseVisualStyleBackColor = True
@@ -210,9 +222,11 @@ Partial Class MainFrm
         Me.GroupBox2.Controls.Add(Me.LFileFinish)
         Me.GroupBox2.Controls.Add(Me.LFileTotal)
         Me.GroupBox2.Controls.Add(Me.Label5)
-        Me.GroupBox2.Location = New System.Drawing.Point(3, 75)
+        Me.GroupBox2.Location = New System.Drawing.Point(4, 92)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(849, 82)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Size = New System.Drawing.Size(1132, 101)
         Me.GroupBox2.TabIndex = 6
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "File Converter Info"
@@ -221,9 +235,10 @@ Partial Class MainFrm
         '
         Me.LSP.BackColor = System.Drawing.SystemColors.Window
         Me.LSP.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LSP.Location = New System.Drawing.Point(432, 16)
+        Me.LSP.Location = New System.Drawing.Point(576, 20)
+        Me.LSP.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LSP.Name = "LSP"
-        Me.LSP.Size = New System.Drawing.Size(49, 23)
+        Me.LSP.Size = New System.Drawing.Size(65, 28)
         Me.LSP.TabIndex = 10
         Me.LSP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -231,9 +246,10 @@ Partial Class MainFrm
         '
         Me.Label3.BackColor = System.Drawing.SystemColors.MenuHighlight
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(326, 16)
+        Me.Label3.Location = New System.Drawing.Point(435, 20)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(100, 23)
+        Me.Label3.Size = New System.Drawing.Size(133, 28)
         Me.Label3.TabIndex = 9
         Me.Label3.Text = "Spare Parts QTY"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -242,9 +258,10 @@ Partial Class MainFrm
         '
         Me.Label7.BackColor = System.Drawing.SystemColors.MenuHighlight
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(166, 16)
+        Me.Label7.Location = New System.Drawing.Point(221, 20)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(100, 23)
+        Me.Label7.Size = New System.Drawing.Size(133, 28)
         Me.Label7.TabIndex = 8
         Me.Label7.Text = "G601 QTY"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -253,9 +270,10 @@ Partial Class MainFrm
         '
         Me.Label6.BackColor = System.Drawing.SystemColors.MenuHighlight
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(166, 50)
+        Me.Label6.Location = New System.Drawing.Point(221, 62)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(100, 23)
+        Me.Label6.Size = New System.Drawing.Size(133, 28)
         Me.Label6.TabIndex = 7
         Me.Label6.Text = "G602 QTY"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -264,9 +282,10 @@ Partial Class MainFrm
         '
         Me.LG601.BackColor = System.Drawing.SystemColors.Window
         Me.LG601.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LG601.Location = New System.Drawing.Point(272, 16)
+        Me.LG601.Location = New System.Drawing.Point(363, 20)
+        Me.LG601.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LG601.Name = "LG601"
-        Me.LG601.Size = New System.Drawing.Size(48, 23)
+        Me.LG601.Size = New System.Drawing.Size(64, 28)
         Me.LG601.TabIndex = 6
         Me.LG601.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -274,9 +293,10 @@ Partial Class MainFrm
         '
         Me.LG602.BackColor = System.Drawing.SystemColors.Window
         Me.LG602.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LG602.Location = New System.Drawing.Point(272, 50)
+        Me.LG602.Location = New System.Drawing.Point(363, 62)
+        Me.LG602.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LG602.Name = "LG602"
-        Me.LG602.Size = New System.Drawing.Size(49, 23)
+        Me.LG602.Size = New System.Drawing.Size(65, 28)
         Me.LG602.TabIndex = 5
         Me.LG602.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -284,9 +304,10 @@ Partial Class MainFrm
         '
         Me.Label4.BackColor = System.Drawing.SystemColors.MenuHighlight
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(6, 16)
+        Me.Label4.Location = New System.Drawing.Point(8, 20)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(100, 23)
+        Me.Label4.Size = New System.Drawing.Size(133, 28)
         Me.Label4.TabIndex = 2
         Me.Label4.Text = "Existing Files"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -295,9 +316,10 @@ Partial Class MainFrm
         '
         Me.LFileFinish.BackColor = System.Drawing.SystemColors.Window
         Me.LFileFinish.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LFileFinish.Location = New System.Drawing.Point(112, 50)
+        Me.LFileFinish.Location = New System.Drawing.Point(149, 62)
+        Me.LFileFinish.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LFileFinish.Name = "LFileFinish"
-        Me.LFileFinish.Size = New System.Drawing.Size(48, 23)
+        Me.LFileFinish.Size = New System.Drawing.Size(64, 28)
         Me.LFileFinish.TabIndex = 4
         Me.LFileFinish.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -305,9 +327,10 @@ Partial Class MainFrm
         '
         Me.LFileTotal.BackColor = System.Drawing.SystemColors.Window
         Me.LFileTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LFileTotal.Location = New System.Drawing.Point(112, 16)
+        Me.LFileTotal.Location = New System.Drawing.Point(149, 20)
+        Me.LFileTotal.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LFileTotal.Name = "LFileTotal"
-        Me.LFileTotal.Size = New System.Drawing.Size(48, 23)
+        Me.LFileTotal.Size = New System.Drawing.Size(64, 28)
         Me.LFileTotal.TabIndex = 1
         Me.LFileTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -315,9 +338,10 @@ Partial Class MainFrm
         '
         Me.Label5.BackColor = System.Drawing.SystemColors.MenuHighlight
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(6, 50)
+        Me.Label5.Location = New System.Drawing.Point(8, 62)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(100, 23)
+        Me.Label5.Size = New System.Drawing.Size(133, 28)
         Me.Label5.TabIndex = 3
         Me.Label5.Text = "Converted Files"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -331,9 +355,10 @@ Partial Class MainFrm
         Me.Panel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.Panel2.Controls.Add(Me.TabControl2)
         Me.Panel2.Controls.Add(Me.GroupBox1)
-        Me.Panel2.Location = New System.Drawing.Point(12, 181)
+        Me.Panel2.Location = New System.Drawing.Point(16, 223)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1355, 398)
+        Me.Panel2.Size = New System.Drawing.Size(1807, 490)
         Me.Panel2.TabIndex = 1
         '
         'TabControl2
@@ -344,10 +369,11 @@ Partial Class MainFrm
         Me.TabControl2.Controls.Add(Me.TP_SparePart)
         Me.TabControl2.Controls.Add(Me.TP_Finished)
         Me.TabControl2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabControl2.Location = New System.Drawing.Point(3, 4)
+        Me.TabControl2.Location = New System.Drawing.Point(4, 5)
+        Me.TabControl2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TabControl2.Name = "TabControl2"
         Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(1025, 391)
+        Me.TabControl2.Size = New System.Drawing.Size(1367, 481)
         Me.TabControl2.TabIndex = 7
         '
         'TP_Compressor
@@ -360,10 +386,11 @@ Partial Class MainFrm
         Me.TP_Compressor.Controls.Add(Me.Lb_C_NO)
         Me.TP_Compressor.Controls.Add(Me.lv_C_NewOrders)
         Me.TP_Compressor.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TP_Compressor.Location = New System.Drawing.Point(4, 29)
+        Me.TP_Compressor.Location = New System.Drawing.Point(4, 34)
+        Me.TP_Compressor.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TP_Compressor.Name = "TP_Compressor"
-        Me.TP_Compressor.Padding = New System.Windows.Forms.Padding(3)
-        Me.TP_Compressor.Size = New System.Drawing.Size(1017, 358)
+        Me.TP_Compressor.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TP_Compressor.Size = New System.Drawing.Size(1359, 443)
         Me.TP_Compressor.TabIndex = 0
         Me.TP_Compressor.Text = "Compressor"
         '
@@ -384,11 +411,12 @@ Partial Class MainFrm
         Me.GLV_C.GridLines = True
         Me.GLV_C.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.GLV_C.HideSelection = False
-        Me.GLV_C.Location = New System.Drawing.Point(681, 29)
+        Me.GLV_C.Location = New System.Drawing.Point(908, 36)
+        Me.GLV_C.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GLV_C.MatchFont = True
         Me.GLV_C.Name = "GLV_C"
         Me.GLV_C.OwnerDraw = True
-        Me.GLV_C.Size = New System.Drawing.Size(330, 323)
+        Me.GLV_C.Size = New System.Drawing.Size(439, 397)
         Me.GLV_C.TabIndex = 6
         Me.GLV_C.UseCompatibleStateImageBehavior = False
         Me.GLV_C.View = System.Windows.Forms.View.Details
@@ -439,9 +467,10 @@ Partial Class MainFrm
         '
         Me.Lb_C_CO.BackColor = System.Drawing.Color.PaleGreen
         Me.Lb_C_CO.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lb_C_CO.Location = New System.Drawing.Point(6, 3)
+        Me.Lb_C_CO.Location = New System.Drawing.Point(8, 4)
+        Me.Lb_C_CO.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Lb_C_CO.Name = "Lb_C_CO"
-        Me.Lb_C_CO.Size = New System.Drawing.Size(333, 23)
+        Me.Lb_C_CO.Size = New System.Drawing.Size(444, 28)
         Me.Lb_C_CO.TabIndex = 1
         Me.Lb_C_CO.Text = "Current Orders"
         Me.Lb_C_CO.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -458,9 +487,10 @@ Partial Class MainFrm
         Me.lv_C_CurrentOrders.GridLines = True
         Me.lv_C_CurrentOrders.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.lv_C_CurrentOrders.HideSelection = False
-        Me.lv_C_CurrentOrders.Location = New System.Drawing.Point(6, 29)
+        Me.lv_C_CurrentOrders.Location = New System.Drawing.Point(8, 36)
+        Me.lv_C_CurrentOrders.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.lv_C_CurrentOrders.Name = "lv_C_CurrentOrders"
-        Me.lv_C_CurrentOrders.Size = New System.Drawing.Size(333, 323)
+        Me.lv_C_CurrentOrders.Size = New System.Drawing.Size(443, 397)
         Me.lv_C_CurrentOrders.TabIndex = 0
         Me.lv_C_CurrentOrders.UseCompatibleStateImageBehavior = False
         Me.lv_C_CurrentOrders.View = System.Windows.Forms.View.Details
@@ -469,9 +499,10 @@ Partial Class MainFrm
         '
         Me.Lb_C_NP.BackColor = System.Drawing.Color.PaleGreen
         Me.Lb_C_NP.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lb_C_NP.Location = New System.Drawing.Point(681, 3)
+        Me.Lb_C_NP.Location = New System.Drawing.Point(908, 4)
+        Me.Lb_C_NP.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Lb_C_NP.Name = "Lb_C_NP"
-        Me.Lb_C_NP.Size = New System.Drawing.Size(330, 23)
+        Me.Lb_C_NP.Size = New System.Drawing.Size(440, 28)
         Me.Lb_C_NP.TabIndex = 5
         Me.Lb_C_NP.Text = "New Planning"
         Me.Lb_C_NP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -480,9 +511,10 @@ Partial Class MainFrm
         '
         Me.Lb_C_NO.BackColor = System.Drawing.Color.PaleGreen
         Me.Lb_C_NO.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lb_C_NO.Location = New System.Drawing.Point(345, 3)
+        Me.Lb_C_NO.Location = New System.Drawing.Point(460, 4)
+        Me.Lb_C_NO.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Lb_C_NO.Name = "Lb_C_NO"
-        Me.Lb_C_NO.Size = New System.Drawing.Size(330, 23)
+        Me.Lb_C_NO.Size = New System.Drawing.Size(440, 28)
         Me.Lb_C_NO.TabIndex = 3
         Me.Lb_C_NO.Text = "New Orders"
         Me.Lb_C_NO.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -498,9 +530,10 @@ Partial Class MainFrm
         Me.lv_C_NewOrders.GridLines = True
         Me.lv_C_NewOrders.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.lv_C_NewOrders.HideSelection = False
-        Me.lv_C_NewOrders.Location = New System.Drawing.Point(345, 29)
+        Me.lv_C_NewOrders.Location = New System.Drawing.Point(460, 36)
+        Me.lv_C_NewOrders.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.lv_C_NewOrders.Name = "lv_C_NewOrders"
-        Me.lv_C_NewOrders.Size = New System.Drawing.Size(330, 323)
+        Me.lv_C_NewOrders.Size = New System.Drawing.Size(439, 397)
         Me.lv_C_NewOrders.TabIndex = 2
         Me.lv_C_NewOrders.UseCompatibleStateImageBehavior = False
         Me.lv_C_NewOrders.View = System.Windows.Forms.View.Details
@@ -515,10 +548,11 @@ Partial Class MainFrm
         Me.TP_SparePart.Controls.Add(Me.LV_S_CurrentOrder)
         Me.TP_SparePart.Controls.Add(Me.Lb_S_CO)
         Me.TP_SparePart.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TP_SparePart.Location = New System.Drawing.Point(4, 29)
+        Me.TP_SparePart.Location = New System.Drawing.Point(4, 34)
+        Me.TP_SparePart.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TP_SparePart.Name = "TP_SparePart"
-        Me.TP_SparePart.Padding = New System.Windows.Forms.Padding(3)
-        Me.TP_SparePart.Size = New System.Drawing.Size(1017, 358)
+        Me.TP_SparePart.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TP_SparePart.Size = New System.Drawing.Size(1359, 443)
         Me.TP_SparePart.TabIndex = 1
         Me.TP_SparePart.Text = "Spare Part"
         '
@@ -538,11 +572,12 @@ Partial Class MainFrm
         Me.GLV_S.GCursorVisible = True
         Me.GLV_S.GridLines = True
         Me.GLV_S.HideSelection = False
-        Me.GLV_S.Location = New System.Drawing.Point(681, 29)
+        Me.GLV_S.Location = New System.Drawing.Point(908, 36)
+        Me.GLV_S.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GLV_S.MatchFont = True
         Me.GLV_S.Name = "GLV_S"
         Me.GLV_S.OwnerDraw = True
-        Me.GLV_S.Size = New System.Drawing.Size(330, 323)
+        Me.GLV_S.Size = New System.Drawing.Size(439, 397)
         Me.GLV_S.TabIndex = 8
         Me.GLV_S.UseCompatibleStateImageBehavior = False
         Me.GLV_S.View = System.Windows.Forms.View.Details
@@ -551,9 +586,10 @@ Partial Class MainFrm
         '
         Me.Lb_S_NP.BackColor = System.Drawing.Color.DarkTurquoise
         Me.Lb_S_NP.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lb_S_NP.Location = New System.Drawing.Point(681, 3)
+        Me.Lb_S_NP.Location = New System.Drawing.Point(908, 4)
+        Me.Lb_S_NP.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Lb_S_NP.Name = "Lb_S_NP"
-        Me.Lb_S_NP.Size = New System.Drawing.Size(330, 23)
+        Me.Lb_S_NP.Size = New System.Drawing.Size(440, 28)
         Me.Lb_S_NP.TabIndex = 7
         Me.Lb_S_NP.Text = "New Planning"
         Me.Lb_S_NP.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -562,9 +598,10 @@ Partial Class MainFrm
         '
         Me.Lb_S_NO.BackColor = System.Drawing.Color.DarkTurquoise
         Me.Lb_S_NO.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lb_S_NO.Location = New System.Drawing.Point(345, 3)
+        Me.Lb_S_NO.Location = New System.Drawing.Point(460, 4)
+        Me.Lb_S_NO.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Lb_S_NO.Name = "Lb_S_NO"
-        Me.Lb_S_NO.Size = New System.Drawing.Size(330, 23)
+        Me.Lb_S_NO.Size = New System.Drawing.Size(440, 28)
         Me.Lb_S_NO.TabIndex = 5
         Me.Lb_S_NO.Text = "New Orders"
         Me.Lb_S_NO.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -580,9 +617,10 @@ Partial Class MainFrm
         Me.LV_S_NewOrder.GridLines = True
         Me.LV_S_NewOrder.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.LV_S_NewOrder.HideSelection = False
-        Me.LV_S_NewOrder.Location = New System.Drawing.Point(345, 29)
+        Me.LV_S_NewOrder.Location = New System.Drawing.Point(460, 36)
+        Me.LV_S_NewOrder.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.LV_S_NewOrder.Name = "LV_S_NewOrder"
-        Me.LV_S_NewOrder.Size = New System.Drawing.Size(330, 323)
+        Me.LV_S_NewOrder.Size = New System.Drawing.Size(439, 397)
         Me.LV_S_NewOrder.TabIndex = 4
         Me.LV_S_NewOrder.UseCompatibleStateImageBehavior = False
         Me.LV_S_NewOrder.View = System.Windows.Forms.View.Details
@@ -599,9 +637,10 @@ Partial Class MainFrm
         Me.LV_S_CurrentOrder.GridLines = True
         Me.LV_S_CurrentOrder.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.LV_S_CurrentOrder.HideSelection = False
-        Me.LV_S_CurrentOrder.Location = New System.Drawing.Point(6, 29)
+        Me.LV_S_CurrentOrder.Location = New System.Drawing.Point(8, 36)
+        Me.LV_S_CurrentOrder.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.LV_S_CurrentOrder.Name = "LV_S_CurrentOrder"
-        Me.LV_S_CurrentOrder.Size = New System.Drawing.Size(333, 323)
+        Me.LV_S_CurrentOrder.Size = New System.Drawing.Size(443, 397)
         Me.LV_S_CurrentOrder.TabIndex = 3
         Me.LV_S_CurrentOrder.UseCompatibleStateImageBehavior = False
         Me.LV_S_CurrentOrder.View = System.Windows.Forms.View.Details
@@ -610,9 +649,10 @@ Partial Class MainFrm
         '
         Me.Lb_S_CO.BackColor = System.Drawing.Color.DarkTurquoise
         Me.Lb_S_CO.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lb_S_CO.Location = New System.Drawing.Point(6, 3)
+        Me.Lb_S_CO.Location = New System.Drawing.Point(8, 4)
+        Me.Lb_S_CO.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Lb_S_CO.Name = "Lb_S_CO"
-        Me.Lb_S_CO.Size = New System.Drawing.Size(333, 23)
+        Me.Lb_S_CO.Size = New System.Drawing.Size(444, 28)
         Me.Lb_S_CO.TabIndex = 2
         Me.Lb_S_CO.Text = "Current Orders"
         Me.Lb_S_CO.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -626,18 +666,20 @@ Partial Class MainFrm
         Me.TP_Finished.Controls.Add(Me.Label2)
         Me.TP_Finished.Controls.Add(Me.LV_F_C)
         Me.TP_Finished.Controls.Add(Me.Label1)
-        Me.TP_Finished.Location = New System.Drawing.Point(4, 29)
+        Me.TP_Finished.Location = New System.Drawing.Point(4, 34)
+        Me.TP_Finished.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TP_Finished.Name = "TP_Finished"
-        Me.TP_Finished.Size = New System.Drawing.Size(1017, 358)
+        Me.TP_Finished.Size = New System.Drawing.Size(1359, 443)
         Me.TP_Finished.TabIndex = 2
         Me.TP_Finished.Text = "Finished"
         '
         'BTN_CopySP
         '
         Me.BTN_CopySP.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_CopySP.Location = New System.Drawing.Point(681, 74)
+        Me.BTN_CopySP.Location = New System.Drawing.Point(908, 91)
+        Me.BTN_CopySP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BTN_CopySP.Name = "BTN_CopySP"
-        Me.BTN_CopySP.Size = New System.Drawing.Size(135, 38)
+        Me.BTN_CopySP.Size = New System.Drawing.Size(180, 47)
         Me.BTN_CopySP.TabIndex = 9
         Me.BTN_CopySP.Text = "Spare Part"
         Me.BTN_CopySP.UseVisualStyleBackColor = True
@@ -645,9 +687,10 @@ Partial Class MainFrm
         'BTN_CopyC
         '
         Me.BTN_CopyC.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_CopyC.Location = New System.Drawing.Point(681, 30)
+        Me.BTN_CopyC.Location = New System.Drawing.Point(908, 37)
+        Me.BTN_CopyC.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BTN_CopyC.Name = "BTN_CopyC"
-        Me.BTN_CopyC.Size = New System.Drawing.Size(135, 38)
+        Me.BTN_CopyC.Size = New System.Drawing.Size(180, 47)
         Me.BTN_CopyC.TabIndex = 8
         Me.BTN_CopyC.Text = "Compressor"
         Me.BTN_CopyC.UseVisualStyleBackColor = True
@@ -664,9 +707,10 @@ Partial Class MainFrm
         Me.LV_F_SP.GridLines = True
         Me.LV_F_SP.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.LV_F_SP.HideSelection = False
-        Me.LV_F_SP.Location = New System.Drawing.Point(342, 30)
+        Me.LV_F_SP.Location = New System.Drawing.Point(456, 37)
+        Me.LV_F_SP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.LV_F_SP.Name = "LV_F_SP"
-        Me.LV_F_SP.Size = New System.Drawing.Size(333, 323)
+        Me.LV_F_SP.Size = New System.Drawing.Size(443, 397)
         Me.LV_F_SP.TabIndex = 7
         Me.LV_F_SP.UseCompatibleStateImageBehavior = False
         Me.LV_F_SP.View = System.Windows.Forms.View.Details
@@ -675,9 +719,10 @@ Partial Class MainFrm
         '
         Me.Label2.BackColor = System.Drawing.Color.DarkTurquoise
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(342, 4)
+        Me.Label2.Location = New System.Drawing.Point(456, 5)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(333, 23)
+        Me.Label2.Size = New System.Drawing.Size(444, 28)
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "Spare Part Orders"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -694,9 +739,10 @@ Partial Class MainFrm
         Me.LV_F_C.GridLines = True
         Me.LV_F_C.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.LV_F_C.HideSelection = False
-        Me.LV_F_C.Location = New System.Drawing.Point(3, 30)
+        Me.LV_F_C.Location = New System.Drawing.Point(4, 37)
+        Me.LV_F_C.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.LV_F_C.Name = "LV_F_C"
-        Me.LV_F_C.Size = New System.Drawing.Size(333, 323)
+        Me.LV_F_C.Size = New System.Drawing.Size(443, 397)
         Me.LV_F_C.TabIndex = 4
         Me.LV_F_C.UseCompatibleStateImageBehavior = False
         Me.LV_F_C.View = System.Windows.Forms.View.Details
@@ -705,9 +751,10 @@ Partial Class MainFrm
         '
         Me.Label1.BackColor = System.Drawing.Color.PaleGreen
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(3, 4)
+        Me.Label1.Location = New System.Drawing.Point(4, 5)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(333, 23)
+        Me.Label1.Size = New System.Drawing.Size(444, 28)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Compressor Orders"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -722,9 +769,11 @@ Partial Class MainFrm
         Me.GroupBox1.Controls.Add(Me.lv_InsertOrder)
         Me.GroupBox1.Controls.Add(Me.BtnLoad)
         Me.GroupBox1.Controls.Add(Me.BtnUpload)
-        Me.GroupBox1.Location = New System.Drawing.Point(1034, 4)
+        Me.GroupBox1.Location = New System.Drawing.Point(1379, 5)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(318, 391)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Size = New System.Drawing.Size(424, 481)
         Me.GroupBox1.TabIndex = 6
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Planning"
@@ -732,9 +781,10 @@ Partial Class MainFrm
         'BtnCopy
         '
         Me.BtnCopy.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCopy.Location = New System.Drawing.Point(191, 19)
+        Me.BtnCopy.Location = New System.Drawing.Point(255, 23)
+        Me.BtnCopy.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnCopy.Name = "BtnCopy"
-        Me.BtnCopy.Size = New System.Drawing.Size(52, 52)
+        Me.BtnCopy.Size = New System.Drawing.Size(69, 64)
         Me.BtnCopy.TabIndex = 12
         Me.BtnCopy.Text = "COPY"
         Me.BtnCopy.UseVisualStyleBackColor = True
@@ -743,9 +793,10 @@ Partial Class MainFrm
         'BtnPlan
         '
         Me.BtnPlan.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnPlan.Location = New System.Drawing.Point(64, 19)
+        Me.BtnPlan.Location = New System.Drawing.Point(85, 23)
+        Me.BtnPlan.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnPlan.Name = "BtnPlan"
-        Me.BtnPlan.Size = New System.Drawing.Size(52, 52)
+        Me.BtnPlan.Size = New System.Drawing.Size(69, 64)
         Me.BtnPlan.TabIndex = 0
         Me.BtnPlan.Text = "PLAN"
         Me.BtnPlan.UseVisualStyleBackColor = True
@@ -760,10 +811,11 @@ Partial Class MainFrm
         Me.lv_InsertOrder.GridLines = True
         Me.lv_InsertOrder.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.lv_InsertOrder.HideSelection = False
-        Me.lv_InsertOrder.Location = New System.Drawing.Point(6, 77)
+        Me.lv_InsertOrder.Location = New System.Drawing.Point(8, 95)
+        Me.lv_InsertOrder.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.lv_InsertOrder.MultiSelect = False
         Me.lv_InsertOrder.Name = "lv_InsertOrder"
-        Me.lv_InsertOrder.Size = New System.Drawing.Size(237, 308)
+        Me.lv_InsertOrder.Size = New System.Drawing.Size(315, 378)
         Me.lv_InsertOrder.TabIndex = 7
         Me.lv_InsertOrder.UseCompatibleStateImageBehavior = False
         Me.lv_InsertOrder.View = System.Windows.Forms.View.Details
@@ -771,9 +823,10 @@ Partial Class MainFrm
         'BtnLoad
         '
         Me.BtnLoad.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnLoad.Location = New System.Drawing.Point(6, 19)
+        Me.BtnLoad.Location = New System.Drawing.Point(8, 23)
+        Me.BtnLoad.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnLoad.Name = "BtnLoad"
-        Me.BtnLoad.Size = New System.Drawing.Size(52, 52)
+        Me.BtnLoad.Size = New System.Drawing.Size(69, 64)
         Me.BtnLoad.TabIndex = 11
         Me.BtnLoad.Text = "LOAD"
         Me.BtnLoad.UseVisualStyleBackColor = True
@@ -782,9 +835,10 @@ Partial Class MainFrm
         '
         Me.BtnUpload.BackColor = System.Drawing.Color.Orange
         Me.BtnUpload.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnUpload.Location = New System.Drawing.Point(122, 19)
+        Me.BtnUpload.Location = New System.Drawing.Point(163, 23)
+        Me.BtnUpload.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnUpload.Name = "BtnUpload"
-        Me.BtnUpload.Size = New System.Drawing.Size(63, 52)
+        Me.BtnUpload.Size = New System.Drawing.Size(84, 64)
         Me.BtnUpload.TabIndex = 10
         Me.BtnUpload.Text = "UPDATE"
         Me.BtnUpload.UseVisualStyleBackColor = False
@@ -796,9 +850,10 @@ Partial Class MainFrm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel3.BackColor = System.Drawing.SystemColors.Info
         Me.Panel3.Controls.Add(Me.TXT_Log)
-        Me.Panel3.Location = New System.Drawing.Point(873, 12)
+        Me.Panel3.Location = New System.Drawing.Point(1164, 15)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(497, 163)
+        Me.Panel3.Size = New System.Drawing.Size(663, 201)
         Me.Panel3.TabIndex = 2
         '
         'TXT_Log
@@ -806,37 +861,40 @@ Partial Class MainFrm
         Me.TXT_Log.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TXT_Log.Location = New System.Drawing.Point(3, 3)
+        Me.TXT_Log.Location = New System.Drawing.Point(4, 4)
+        Me.TXT_Log.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TXT_Log.Multiline = True
         Me.TXT_Log.Name = "TXT_Log"
         Me.TXT_Log.ReadOnly = True
         Me.TXT_Log.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.TXT_Log.Size = New System.Drawing.Size(491, 157)
+        Me.TXT_Log.Size = New System.Drawing.Size(653, 192)
         Me.TXT_Log.TabIndex = 0
         '
         'StatusStrip1
         '
+        Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripProgressBar1, Me.TSSL1, Me.TSSL2})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 582)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 717)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(1370, 22)
+        Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 19, 0)
+        Me.StatusStrip1.Size = New System.Drawing.Size(1827, 26)
         Me.StatusStrip1.TabIndex = 3
         Me.StatusStrip1.Text = "StatusStrip1"
         '
         'ToolStripProgressBar1
         '
         Me.ToolStripProgressBar1.Name = "ToolStripProgressBar1"
-        Me.ToolStripProgressBar1.Size = New System.Drawing.Size(100, 16)
+        Me.ToolStripProgressBar1.Size = New System.Drawing.Size(133, 20)
         '
         'TSSL1
         '
         Me.TSSL1.Name = "TSSL1"
-        Me.TSSL1.Size = New System.Drawing.Size(0, 17)
+        Me.TSSL1.Size = New System.Drawing.Size(0, 21)
         '
         'TSSL2
         '
         Me.TSSL2.Name = "TSSL2"
-        Me.TSSL2.Size = New System.Drawing.Size(0, 17)
+        Me.TSSL2.Size = New System.Drawing.Size(0, 21)
         '
         'FSW_SparePart
         '
@@ -851,17 +909,18 @@ Partial Class MainFrm
         '
         'MainFrm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1370, 604)
+        Me.ClientSize = New System.Drawing.Size(1827, 743)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "MainFrm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "DTC Real Production Planning V1.1"
+        Me.Text = "DTC Real Production Planning"
         CType(Me.FSW_Server, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
