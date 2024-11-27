@@ -210,7 +210,7 @@ Module Excel2MES
     End Sub
     Private Sub ReadPN2DESC(ByVal searchPN As String, ByVal log As TextBox)
         Try
-            IsOldPN = False
+            'IsOldPN = False
             log.AppendText(Now & " 开始读取PN2Description文件..." & vbCrLf)
             Dim reader As TextReader = File.OpenText(".\PN2Description.txt")
             Dim LineStr As String = ""
@@ -230,15 +230,16 @@ Module Excel2MES
                 End If
             Next
 
-            Dim OldPNReader As TextReader = File.OpenText(".\08_Data\OldPNs.txt")
-            Dim OldPNLineStr As String = ""
-            Do While OldPNReader.Peek >= 0
-                OldPNLineStr = OldPNLineStr & OldPNReader.ReadLine & ","
-            Loop
-            If OldPNLineStr.IndexOf(searchPN) >= 0 Then
-                IsOldPN = True
-            End If
-            OldPNReader.Close()
+            IsOldPN = isNewMaterialNumber(searchPN)
+            'Dim OldPNReader As TextReader = File.OpenText(".\08_Data\OldPNs.txt")
+            'Dim OldPNLineStr As String = ""
+            'Do While OldPNReader.Peek >= 0
+            'OldPNLineStr = OldPNLineStr & OldPNReader.ReadLine & ","
+            'Loop
+            'If OldPNLineStr.IndexOf(searchPN) >= 0 Then
+            'IsOldPN = True
+            'End If
+            'OldPNReader.Close()
 
         Catch ex As Exception
             MessageBox.Show(ex.Message)

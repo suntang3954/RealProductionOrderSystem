@@ -1,4 +1,7 @@
 ﻿Imports System.IO
+Imports System.Net
+Imports System.Data.SqlClient
+
 
 Module RealPP
     Public co_LVI_0 As ListViewItem
@@ -11,6 +14,8 @@ Module RealPP
     Private mDirInfo As System.IO.DirectoryInfo
     Private isPPAP As Boolean
     Private isBonded As Boolean
+    Public temFile As String = ""
+    Public pcHost As String = Dns.GetHostName()
 
     'read MES document and update listviewitem
     Public Sub ReadMES(ByVal path As String, ByVal mesName As String)
@@ -67,6 +72,7 @@ Module RealPP
                     ReadMES(mFileInfo.FullName, mFileInfo.Name)
                     listview.Items.Add(co_LVI_0)
                     mFileInfo.CopyTo(".\04_Pre_UpLoad\" & mFileInfo.Name, True)
+
                     MainFrm.ToolStripProgressBar1.Value += 1
                 Next
                 log.AppendText(Now & " 读取完成..." & vbCrLf)
@@ -259,7 +265,47 @@ Module RealPP
             MessageBox.Show(ex.Message)
         End Try
     End Sub
+    Public Function createLock(ByVal tag) As Boolean
+        temFile = pcHost & "-" & tag & "-lock.loc"
+        'get all fies in the directory with the .loc extension.
+        Dim files As String() = Directory.GetFiles(".", "*.loc")
+        If files.Length() > 0 Then
+            Return False
+        End If
 
+        If Not File.Exists(temFile) Then
+            File.Create(temFile).Close()
+        End If
+        Return True
+    End Function
+    Public Sub releaseLock(ByVal tag)
+        'temFile = temFile & "-" & tag & "-lock.loc"
+        If File.Exists(temFile) Then File.Delete(temFile)
+    End Sub
+    Public Function isNewMaterialNumber(ByVal materialNumber As String) As Boolean
+        Dim connectionString As String =
+            "Server=10.62.235.85;Database=WebDB;User Id=pyuser;Password=danfoss;"
+        Dim query As String = "select * from [dbo].[MaterialNumberIndex] where MaterialNumber = " & "'" & materialNumber & "'"
+        Try
+            Using connection As New SqlConnection(connectionString)
+                Using command As New SqlCommand(query, connection)
+                    connection.Open()
+                    Try
+                        Using reader As SqlDataReader = command.ExecuteReader()
+                            If reader.HasRows Then
+                                Return True
+                            End If
+                        End Using
+                    Catch ex As Exception
+                        MessageBox.Show(ex.Message)
+                    End Try
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+        Return False
+    End Function
 #Region "Connect to Network Driver"
     Public Sub Open_SAMS_Connection(ByVal strComputer As String, ByVal strUsername As String, ByVal strPassword As String)
         Try

@@ -14,8 +14,8 @@ Public Class MainFrm
             'remove FSW created function, change FSW delete function to just stop and need to reload orders
             'upgrade to fit ONE-ERP auto generate version
             'Ver3.1: add TG380,TG490,TT450 and fix the wrong 600a0312 Description, log the decoding process of the mes files.
-
-            Dim ver As String = " Ver3.1"
+            'Ver3.2: add the lock function for avoiding the operation at the same time.
+            Dim ver As String = " Ver3.2"
             Me.Text = Me.Text & ver
 
             BtnUpload.Visible = False
@@ -132,6 +132,13 @@ Public Class MainFrm
     Private Sub BtnPlan_Click(sender As Object, e As EventArgs) Handles BtnPlan.Click
         Try
             TXT_Log.AppendText(Now & "点击PLAN按钮..." & vbCrLf)
+
+            'create a lock for avoiding to operate at the same time.
+            'If Not createLock(TabControl2.SelectedTab.Name) Then
+            'MsgBox("文件正在被操作,请稍后再尝试.")
+            'Exit Sub
+            'End If
+
             Select Case TabControl2.SelectedTab.Name
                 Case "TP_Compressor"
                     OrderSeq(lv_C_CurrentOrders, lv_C_NewOrders, GLV_C, TXT_Log)
@@ -282,6 +289,8 @@ Public Class MainFrm
                 Case "TP_Finished"
 
             End Select
+            'release the lock after updating
+            'releaseLock(TabControl2.SelectedTab.Name)
             BtnUpload.Visible = False
             BtnPlan.Visible = False
             TXT_Log.AppendText(Now & " 结束上传数据..." & vbCrLf)
