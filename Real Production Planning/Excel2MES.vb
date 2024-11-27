@@ -229,7 +229,7 @@ Module Excel2MES
                     Exit For
                 End If
             Next
-
+            log.AppendText("Chech if " & searchPN & "is new PN.")
             IsOldPN = isNewMaterialNumber(searchPN)
             'Dim OldPNReader As TextReader = File.OpenText(".\08_Data\OldPNs.txt")
             'Dim OldPNLineStr As String = ""
