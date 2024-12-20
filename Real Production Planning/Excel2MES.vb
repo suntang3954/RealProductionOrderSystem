@@ -12,6 +12,7 @@ Module Excel2MES
     Private xlWorkBook As Excel.Workbook
     Private xlWorkSheet As Excel.Worksheet
     Private xlRange As Excel.Range
+    Private xlFind As Excel.XlFindLookIn
 
     Private iWorkOrder As String 'work order number in excel
     Private iMaterial As String 'material description in excel
@@ -38,6 +39,7 @@ Module Excel2MES
     Private iG602TT350Qty, iG602TT400Qty, iG602TT700Qty, iG601TT350Qty, iG601TT400Qty, iG601TT700Qty As Integer
     Private iG601TT300Qty, iG602TT300Qty As Integer
     Private IsOldPN As Boolean
+    Private softwarePnFile As String = ".\08_Data\SoftwarePN.txt"
 
     Public Sub FileProcess(ByVal log As TextBox)
 
@@ -67,7 +69,14 @@ Module Excel2MES
                 log.AppendText(Now & " 开始转换订单文件：" & filename & "..." & vbCrLf)
                 ReadFromExcel(filename, log)
                 MainFrm.ToolStripProgressBar1.Value = 50
-                ReadPN2DESC(iPN, log)
+                'ReadPN2DESC(iPN, log)
+                If isNewMaterialNumber(iPN) Then
+                    log.AppendText(iPN & "is New.")
+                    update_PN2Desc(iPN, iNamePlateDesc, manual_mode:=False)
+                Else
+                    log.AppendText(iPN & "is used.")
+                End If
+
                 Write2MES(log) 'Write MES files
                 If iPlant = "G602" Then Write4009(log) 'Write G602 material file
                 FileSystem.MoveFile(mFileInfo.FullName, ".\05_XlsHistory\" & iPlant & "-" & iPN & "-" & iWorkOrder & "-" & iQty & "-" & Int(Rnd() * 1000) & ".xls", True)
@@ -119,6 +128,8 @@ Module Excel2MES
             iPN = iMaterial.Substring(0, iMaterial.IndexOf(" "))
             GetFisrt(iPN, "0")
             iPN = iPN.Substring(startIndex)
+            '2024/12/20 define the iNamePlateDesc
+            iNamePlateDesc = ExcelMaterial2PNDesc(iMaterial)
             '增加诺德堡的半成品压缩机型号和描述的匹配
             '增加了ifelse判断
             If iPN.StartsWith("600A") Then
@@ -141,8 +152,29 @@ Module Excel2MES
                         iDesc = "TTS700HHS20020X0XXS413"
                     Case "600A0314"
                         iDesc = "TTS700HHH20020X0XXS413"
+                    Case Else
+                        'search the value of the SWV. 2024/12/20 ke
+                        Dim resRange As Excel.Range = xlRange.Find("SWV")
+                        Try
+                            'SWV 的默认格式应该是 SWV 4-4-0 TG490HHS
+                            Dim swv_value As String = resRange.Value
+                            Dim model_value As String = swv_value.Split(" ").GetValue(2)
+                            'software pn: 234556-134
+                            Dim software_value As String = CType(xlRange(resRange.Row, resRange.Column - 1), Excel.Range).Value
+                            'get the s model:S314
+                            Dim software_model As String = getSoftwareType(software_value)
+
+                            log.AppendText("Found SWV: " & swv_value)
+                            swv_value = swv_value.Split(" ").GetValue(2)
+                            iDesc = swv_value & "20050X0XXS" & software_model '22位铭牌信息
+
+                        Catch ex As Exception
+                            MsgBox("解析SWV 的时候发生错误，造成Mes文件Description内容可能会出错！", vbOKCancel, "Error")
+                        End Try
                 End Select
             Else
+                'example: 199B0479 TTS350HHS1S020X0XXS406
+
                 iDesc = iMaterial.Substring(iMaterial.IndexOf(" ") + 1, iMaterial.Length - 1 - iPN.Length)
 
             End If
@@ -167,7 +199,6 @@ Module Excel2MES
                 iBOMPN = iBOMPN & CType(xlRange.Cells(i, 4), Excel.Range).Value & ","
                 iBOMQty = iBOMQty & CType(xlRange.Cells(i, 7), Excel.Range).Value / iQty & ","
                 'k = i
-
                 If iPlant = "G602" Then
                     iG602Plant = CType(xlRange.Cells(i, 10), Excel.Range).Value
                     If iG602Plant = "G602" Then
@@ -176,7 +207,6 @@ Module Excel2MES
                         iG602PQty = iG602PQty & CType(xlRange.Cells(i, 7), Excel.Range).Value & ","
                     End If
                 End If
-
             Next
 
             isubPN = Split(iBOMPN, ",")
@@ -209,6 +239,7 @@ Module Excel2MES
         ReadPN2DESC("199B0650", log)
     End Sub
     Private Sub ReadPN2DESC(ByVal searchPN As String, ByVal log As TextBox)
+        'drop this function 24/12/20 ke
         Try
             'IsOldPN = False
             log.AppendText(Now & " 开始读取PN2Description文件..." & vbCrLf)
@@ -230,16 +261,13 @@ Module Excel2MES
                 End If
             Next
             log.AppendText("Chech if " & searchPN & "is new PN.")
+
             IsOldPN = isNewMaterialNumber(searchPN)
-            'Dim OldPNReader As TextReader = File.OpenText(".\08_Data\OldPNs.txt")
-            'Dim OldPNLineStr As String = ""
-            'Do While OldPNReader.Peek >= 0
-            'OldPNLineStr = OldPNLineStr & OldPNReader.ReadLine & ","
-            'Loop
-            'If OldPNLineStr.IndexOf(searchPN) >= 0 Then
-            'IsOldPN = True
-            'End If
-            'OldPNReader.Close()
+            If IsOldPN Then
+                log.AppendText(searchPN & " is New <'-'> ")
+            Else
+                log.AppendText(searchPN & " is Old >>")
+            End If
 
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -485,6 +513,21 @@ Module Excel2MES
         End Try
 
     End Sub
+    Public Function getSoftwareType(ByVal software_pn As String) As String
+        Dim res As String = "S413"
+        If File.Exists(softwarePnFile) Then
+            For Each line In File.ReadLines(softwarePnFile)
+                If line.Contains(software_pn) Then
+                    Try
+                        res = line.Split(Chr(9)).GetValue(1)
+                    Catch ex As Exception
+                        MsgBox("读取" & softwarePnFile & "异常，无法提取" & software_pn & "的S值,将默认使用S413.")
+                    End Try
+                End If
+            Next
+        End If
+        Return res
+    End Function
 
     Public Sub AutoEmailG602(ByVal mWorkOrder As String)
         Try

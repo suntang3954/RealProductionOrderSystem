@@ -10,6 +10,7 @@ Module RealPP
     Public ReadOnly SP_Path As String = "\\10.62.235.78\Broadcast\Spare Parts\"
     Public ReadOnly COMP_F_Path As String = "\\10.62.235.78\Broadcast\Processed\"
     Public ReadOnly SP_F_Path As String = "\\10.62.235.78\Broadcast\Spare Parts\Processed\"
+    Public pn2DescFile As String = "PN2Description.txt"
     Private mFileInfo As System.IO.FileInfo
     Private mDirInfo As System.IO.DirectoryInfo
     Private isPPAP As Boolean
@@ -265,6 +266,58 @@ Module RealPP
             MessageBox.Show(ex.Message)
         End Try
     End Sub
+    '2024 12 19 update PN2Description.txt
+    Public Function update_PN2Desc(ByVal new_pn As String, ByVal description As String, ByVal manual_mode As Boolean) As Boolean
+        'example: 
+        '600A: CORE COMPRESSOR ASSY - TT400H/TG390H 400V (S) for core
+        'Model-H-1-ST-F-O-CH for normal
+        Dim new_line As String
+        If manual_mode Then
+            If "600A" = Left(new_pn, 4) Then
+                'Compressor for Nordborg
+                new_line = new_pn & description
+            Else
+                'Normal TTS350HES3S020X0XXS413
+                new_line = new_pn & "," & Left(description, 2) + Mid(description, 4, 3) & "-H-1-ST-F-O-CH"
+            End If
+        Else
+            new_line = description
+        End If
+        Console.WriteLine(new_line)
+
+        If File.Exists(pn2DescFile) Then
+            Try
+                File.AppendAllText(pn2DescFile, Environment.NewLine & new_line)
+                Console.WriteLine(new_pn & " Has been writed.")
+                Return True
+            Catch ex As Exception
+                MessageBox.Show("An error occurred: " & ex.Message)
+                Return False
+            End Try
+        Else
+            MsgBox("找不到 PN2Description.txt")
+            Return False
+        End If
+    End Function
+    Public Function ExcelMaterial2PNDesc(ByVal materialDes As String) As String
+        '24/12/20
+        Dim res As String = ""
+        If materialDes.Contains(" ") Then
+            Dim startIndex As Integer = materialDes.IndexOf(" ") + 1
+            Dim len As Integer = materialDes.Length - startIndex
+            Dim str As String = materialDes.Substring(startIndex, len) 'Desc
+            If Left(materialDes, 8).Contains("600A") Then
+                'NORDBORG CORE
+                res = "CORE " & str
+            Else
+                'NORMAL
+                Dim tem As String = Left(str, 7) 'TTS300H
+                res = Left(tem, 2) & Mid(tem, 4, 3) & "-" & Right(tem, 1) & "-1-ST-F-O-CH"
+            End If
+
+        End If
+        Return res
+    End Function
     Public Function createLock(ByVal tag) As Boolean
         temFile = pcHost & "-" & tag & "-lock.loc"
         'get all fies in the directory with the .loc extension.
@@ -282,7 +335,9 @@ Module RealPP
         'temFile = temFile & "-" & tag & "-lock.loc"
         If File.Exists(temFile) Then File.Delete(temFile)
     End Sub
+    '2024 12 19 check if the material nubmer is new.
     Public Function isNewMaterialNumber(ByVal materialNumber As String) As Boolean
+        'RETURN: 0:old,1:new
         Dim connectionString As String =
             "Server=10.62.235.85;Database=WebDB;User Id=pyuser;Password=danfoss;"
         Dim query As String = "select * from [dbo].[MaterialNumberIndex] where MaterialNumber = " & "'" & materialNumber & "'"
@@ -293,7 +348,9 @@ Module RealPP
                     Try
                         Using reader As SqlDataReader = command.ExecuteReader()
                             If reader.HasRows Then
-                                Return True
+                                Return False 'there are records in the Database.
+                            Else
+                                Return True 'not exist in the DB
                             End If
                         End Using
                     Catch ex As Exception
@@ -304,7 +361,7 @@ Module RealPP
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
-        Return False
+        Return True
     End Function
 #Region "Connect to Network Driver"
     Public Sub Open_SAMS_Connection(ByVal strComputer As String, ByVal strUsername As String, ByVal strPassword As String)

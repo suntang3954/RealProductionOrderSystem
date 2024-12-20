@@ -84,6 +84,17 @@ Partial Class MainFrm
         Me.TSSL2 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.FSW_SparePart = New System.IO.FileSystemWatcher()
         Me.SIL = New System.Windows.Forms.ImageList(Me.components)
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VersionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CheckPNToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UpdatePNFileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GetSWVToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Material2PNDesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LockToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LockCompressorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LockSparePartToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.FSW_Server, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -98,6 +109,7 @@ Partial Class MainFrm
         Me.Panel3.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         CType(Me.FSW_SparePart, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'FSW_Server
@@ -111,8 +123,8 @@ Partial Class MainFrm
         Me.Panel1.Controls.Add(Me.GroupBox4)
         Me.Panel1.Controls.Add(Me.GroupBox3)
         Me.Panel1.Controls.Add(Me.GroupBox2)
-        Me.Panel1.Location = New System.Drawing.Point(16, 15)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Location = New System.Drawing.Point(16, 34)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1140, 201)
         Me.Panel1.TabIndex = 0
@@ -123,9 +135,9 @@ Partial Class MainFrm
         Me.GroupBox4.Controls.Add(Me.ListBox2)
         Me.GroupBox4.Controls.Add(Me.BtnDetect)
         Me.GroupBox4.Location = New System.Drawing.Point(4, 4)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox4.Size = New System.Drawing.Size(755, 81)
         Me.GroupBox4.TabIndex = 8
         Me.GroupBox4.TabStop = False
@@ -134,7 +146,7 @@ Partial Class MainFrm
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(436, 21)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(84, 53)
         Me.Button1.TabIndex = 2
@@ -146,7 +158,7 @@ Partial Class MainFrm
         Me.ListBox2.FormattingEnabled = True
         Me.ListBox2.ItemHeight = 16
         Me.ListBox2.Location = New System.Drawing.Point(109, 21)
-        Me.ListBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ListBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.ListBox2.Name = "ListBox2"
         Me.ListBox2.Size = New System.Drawing.Size(317, 52)
         Me.ListBox2.TabIndex = 1
@@ -155,7 +167,7 @@ Partial Class MainFrm
         '
         Me.BtnDetect.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnDetect.Location = New System.Drawing.Point(8, 20)
-        Me.BtnDetect.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnDetect.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnDetect.Name = "BtnDetect"
         Me.BtnDetect.Size = New System.Drawing.Size(93, 54)
         Me.BtnDetect.TabIndex = 0
@@ -168,9 +180,9 @@ Partial Class MainFrm
         Me.GroupBox3.Controls.Add(Me.CB_PPAP)
         Me.GroupBox3.Controls.Add(Me.BtnStart)
         Me.GroupBox3.Location = New System.Drawing.Point(767, 4)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox3.Size = New System.Drawing.Size(369, 81)
         Me.GroupBox3.TabIndex = 7
         Me.GroupBox3.TabStop = False
@@ -181,7 +193,7 @@ Partial Class MainFrm
         Me.CB_Email.AutoSize = True
         Me.CB_Email.Enabled = False
         Me.CB_Email.Location = New System.Drawing.Point(107, 53)
-        Me.CB_Email.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CB_Email.Margin = New System.Windows.Forms.Padding(4)
         Me.CB_Email.Name = "CB_Email"
         Me.CB_Email.Size = New System.Drawing.Size(70, 21)
         Me.CB_Email.TabIndex = 2
@@ -192,7 +204,7 @@ Partial Class MainFrm
         '
         Me.CB_PPAP.AutoSize = True
         Me.CB_PPAP.Location = New System.Drawing.Point(107, 23)
-        Me.CB_PPAP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CB_PPAP.Margin = New System.Windows.Forms.Padding(4)
         Me.CB_PPAP.Name = "CB_PPAP"
         Me.CB_PPAP.Size = New System.Drawing.Size(66, 21)
         Me.CB_PPAP.TabIndex = 1
@@ -203,7 +215,7 @@ Partial Class MainFrm
         '
         Me.BtnStart.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnStart.Location = New System.Drawing.Point(5, 20)
-        Me.BtnStart.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnStart.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnStart.Name = "BtnStart"
         Me.BtnStart.Size = New System.Drawing.Size(93, 54)
         Me.BtnStart.TabIndex = 0
@@ -222,10 +234,10 @@ Partial Class MainFrm
         Me.GroupBox2.Controls.Add(Me.LFileFinish)
         Me.GroupBox2.Controls.Add(Me.LFileTotal)
         Me.GroupBox2.Controls.Add(Me.Label5)
-        Me.GroupBox2.Location = New System.Drawing.Point(4, 92)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Location = New System.Drawing.Point(4, 99)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Size = New System.Drawing.Size(1132, 101)
         Me.GroupBox2.TabIndex = 6
         Me.GroupBox2.TabStop = False
@@ -355,10 +367,10 @@ Partial Class MainFrm
         Me.Panel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.Panel2.Controls.Add(Me.TabControl2)
         Me.Panel2.Controls.Add(Me.GroupBox1)
-        Me.Panel2.Location = New System.Drawing.Point(16, 223)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Location = New System.Drawing.Point(16, 242)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1807, 490)
+        Me.Panel2.Size = New System.Drawing.Size(1807, 549)
         Me.Panel2.TabIndex = 1
         '
         'TabControl2
@@ -370,10 +382,10 @@ Partial Class MainFrm
         Me.TabControl2.Controls.Add(Me.TP_Finished)
         Me.TabControl2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabControl2.Location = New System.Drawing.Point(4, 5)
-        Me.TabControl2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabControl2.Margin = New System.Windows.Forms.Padding(4)
         Me.TabControl2.Name = "TabControl2"
         Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(1367, 481)
+        Me.TabControl2.Size = New System.Drawing.Size(1367, 540)
         Me.TabControl2.TabIndex = 7
         '
         'TP_Compressor
@@ -387,10 +399,10 @@ Partial Class MainFrm
         Me.TP_Compressor.Controls.Add(Me.lv_C_NewOrders)
         Me.TP_Compressor.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TP_Compressor.Location = New System.Drawing.Point(4, 34)
-        Me.TP_Compressor.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TP_Compressor.Margin = New System.Windows.Forms.Padding(4)
         Me.TP_Compressor.Name = "TP_Compressor"
-        Me.TP_Compressor.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.TP_Compressor.Size = New System.Drawing.Size(1359, 443)
+        Me.TP_Compressor.Padding = New System.Windows.Forms.Padding(4)
+        Me.TP_Compressor.Size = New System.Drawing.Size(1359, 502)
         Me.TP_Compressor.TabIndex = 0
         Me.TP_Compressor.Text = "Compressor"
         '
@@ -412,11 +424,11 @@ Partial Class MainFrm
         Me.GLV_C.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.GLV_C.HideSelection = False
         Me.GLV_C.Location = New System.Drawing.Point(908, 36)
-        Me.GLV_C.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GLV_C.Margin = New System.Windows.Forms.Padding(4)
         Me.GLV_C.MatchFont = True
         Me.GLV_C.Name = "GLV_C"
         Me.GLV_C.OwnerDraw = True
-        Me.GLV_C.Size = New System.Drawing.Size(439, 397)
+        Me.GLV_C.Size = New System.Drawing.Size(439, 456)
         Me.GLV_C.TabIndex = 6
         Me.GLV_C.UseCompatibleStateImageBehavior = False
         Me.GLV_C.View = System.Windows.Forms.View.Details
@@ -488,9 +500,9 @@ Partial Class MainFrm
         Me.lv_C_CurrentOrders.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.lv_C_CurrentOrders.HideSelection = False
         Me.lv_C_CurrentOrders.Location = New System.Drawing.Point(8, 36)
-        Me.lv_C_CurrentOrders.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lv_C_CurrentOrders.Margin = New System.Windows.Forms.Padding(4)
         Me.lv_C_CurrentOrders.Name = "lv_C_CurrentOrders"
-        Me.lv_C_CurrentOrders.Size = New System.Drawing.Size(443, 397)
+        Me.lv_C_CurrentOrders.Size = New System.Drawing.Size(443, 456)
         Me.lv_C_CurrentOrders.TabIndex = 0
         Me.lv_C_CurrentOrders.UseCompatibleStateImageBehavior = False
         Me.lv_C_CurrentOrders.View = System.Windows.Forms.View.Details
@@ -531,9 +543,9 @@ Partial Class MainFrm
         Me.lv_C_NewOrders.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.lv_C_NewOrders.HideSelection = False
         Me.lv_C_NewOrders.Location = New System.Drawing.Point(460, 36)
-        Me.lv_C_NewOrders.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lv_C_NewOrders.Margin = New System.Windows.Forms.Padding(4)
         Me.lv_C_NewOrders.Name = "lv_C_NewOrders"
-        Me.lv_C_NewOrders.Size = New System.Drawing.Size(439, 397)
+        Me.lv_C_NewOrders.Size = New System.Drawing.Size(439, 456)
         Me.lv_C_NewOrders.TabIndex = 2
         Me.lv_C_NewOrders.UseCompatibleStateImageBehavior = False
         Me.lv_C_NewOrders.View = System.Windows.Forms.View.Details
@@ -549,10 +561,10 @@ Partial Class MainFrm
         Me.TP_SparePart.Controls.Add(Me.Lb_S_CO)
         Me.TP_SparePart.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TP_SparePart.Location = New System.Drawing.Point(4, 34)
-        Me.TP_SparePart.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TP_SparePart.Margin = New System.Windows.Forms.Padding(4)
         Me.TP_SparePart.Name = "TP_SparePart"
-        Me.TP_SparePart.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.TP_SparePart.Size = New System.Drawing.Size(1359, 443)
+        Me.TP_SparePart.Padding = New System.Windows.Forms.Padding(4)
+        Me.TP_SparePart.Size = New System.Drawing.Size(1359, 502)
         Me.TP_SparePart.TabIndex = 1
         Me.TP_SparePart.Text = "Spare Part"
         '
@@ -573,7 +585,7 @@ Partial Class MainFrm
         Me.GLV_S.GridLines = True
         Me.GLV_S.HideSelection = False
         Me.GLV_S.Location = New System.Drawing.Point(908, 36)
-        Me.GLV_S.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GLV_S.Margin = New System.Windows.Forms.Padding(4)
         Me.GLV_S.MatchFont = True
         Me.GLV_S.Name = "GLV_S"
         Me.GLV_S.OwnerDraw = True
@@ -618,7 +630,7 @@ Partial Class MainFrm
         Me.LV_S_NewOrder.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.LV_S_NewOrder.HideSelection = False
         Me.LV_S_NewOrder.Location = New System.Drawing.Point(460, 36)
-        Me.LV_S_NewOrder.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LV_S_NewOrder.Margin = New System.Windows.Forms.Padding(4)
         Me.LV_S_NewOrder.Name = "LV_S_NewOrder"
         Me.LV_S_NewOrder.Size = New System.Drawing.Size(439, 397)
         Me.LV_S_NewOrder.TabIndex = 4
@@ -638,7 +650,7 @@ Partial Class MainFrm
         Me.LV_S_CurrentOrder.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.LV_S_CurrentOrder.HideSelection = False
         Me.LV_S_CurrentOrder.Location = New System.Drawing.Point(8, 36)
-        Me.LV_S_CurrentOrder.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LV_S_CurrentOrder.Margin = New System.Windows.Forms.Padding(4)
         Me.LV_S_CurrentOrder.Name = "LV_S_CurrentOrder"
         Me.LV_S_CurrentOrder.Size = New System.Drawing.Size(443, 397)
         Me.LV_S_CurrentOrder.TabIndex = 3
@@ -667,9 +679,9 @@ Partial Class MainFrm
         Me.TP_Finished.Controls.Add(Me.LV_F_C)
         Me.TP_Finished.Controls.Add(Me.Label1)
         Me.TP_Finished.Location = New System.Drawing.Point(4, 34)
-        Me.TP_Finished.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TP_Finished.Margin = New System.Windows.Forms.Padding(4)
         Me.TP_Finished.Name = "TP_Finished"
-        Me.TP_Finished.Size = New System.Drawing.Size(1359, 443)
+        Me.TP_Finished.Size = New System.Drawing.Size(1359, 502)
         Me.TP_Finished.TabIndex = 2
         Me.TP_Finished.Text = "Finished"
         '
@@ -677,7 +689,7 @@ Partial Class MainFrm
         '
         Me.BTN_CopySP.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTN_CopySP.Location = New System.Drawing.Point(908, 91)
-        Me.BTN_CopySP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BTN_CopySP.Margin = New System.Windows.Forms.Padding(4)
         Me.BTN_CopySP.Name = "BTN_CopySP"
         Me.BTN_CopySP.Size = New System.Drawing.Size(180, 47)
         Me.BTN_CopySP.TabIndex = 9
@@ -688,7 +700,7 @@ Partial Class MainFrm
         '
         Me.BTN_CopyC.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTN_CopyC.Location = New System.Drawing.Point(908, 37)
-        Me.BTN_CopyC.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BTN_CopyC.Margin = New System.Windows.Forms.Padding(4)
         Me.BTN_CopyC.Name = "BTN_CopyC"
         Me.BTN_CopyC.Size = New System.Drawing.Size(180, 47)
         Me.BTN_CopyC.TabIndex = 8
@@ -708,7 +720,7 @@ Partial Class MainFrm
         Me.LV_F_SP.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.LV_F_SP.HideSelection = False
         Me.LV_F_SP.Location = New System.Drawing.Point(456, 37)
-        Me.LV_F_SP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LV_F_SP.Margin = New System.Windows.Forms.Padding(4)
         Me.LV_F_SP.Name = "LV_F_SP"
         Me.LV_F_SP.Size = New System.Drawing.Size(443, 397)
         Me.LV_F_SP.TabIndex = 7
@@ -740,7 +752,7 @@ Partial Class MainFrm
         Me.LV_F_C.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.LV_F_C.HideSelection = False
         Me.LV_F_C.Location = New System.Drawing.Point(4, 37)
-        Me.LV_F_C.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LV_F_C.Margin = New System.Windows.Forms.Padding(4)
         Me.LV_F_C.Name = "LV_F_C"
         Me.LV_F_C.Size = New System.Drawing.Size(443, 397)
         Me.LV_F_C.TabIndex = 4
@@ -770,10 +782,10 @@ Partial Class MainFrm
         Me.GroupBox1.Controls.Add(Me.BtnLoad)
         Me.GroupBox1.Controls.Add(Me.BtnUpload)
         Me.GroupBox1.Location = New System.Drawing.Point(1379, 5)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox1.Size = New System.Drawing.Size(424, 481)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
+        Me.GroupBox1.Size = New System.Drawing.Size(424, 540)
         Me.GroupBox1.TabIndex = 6
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Planning"
@@ -782,7 +794,7 @@ Partial Class MainFrm
         '
         Me.BtnCopy.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnCopy.Location = New System.Drawing.Point(255, 23)
-        Me.BtnCopy.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnCopy.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnCopy.Name = "BtnCopy"
         Me.BtnCopy.Size = New System.Drawing.Size(69, 64)
         Me.BtnCopy.TabIndex = 12
@@ -794,7 +806,7 @@ Partial Class MainFrm
         '
         Me.BtnPlan.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnPlan.Location = New System.Drawing.Point(85, 23)
-        Me.BtnPlan.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnPlan.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnPlan.Name = "BtnPlan"
         Me.BtnPlan.Size = New System.Drawing.Size(69, 64)
         Me.BtnPlan.TabIndex = 0
@@ -812,10 +824,10 @@ Partial Class MainFrm
         Me.lv_InsertOrder.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.lv_InsertOrder.HideSelection = False
         Me.lv_InsertOrder.Location = New System.Drawing.Point(8, 95)
-        Me.lv_InsertOrder.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lv_InsertOrder.Margin = New System.Windows.Forms.Padding(4)
         Me.lv_InsertOrder.MultiSelect = False
         Me.lv_InsertOrder.Name = "lv_InsertOrder"
-        Me.lv_InsertOrder.Size = New System.Drawing.Size(315, 378)
+        Me.lv_InsertOrder.Size = New System.Drawing.Size(315, 437)
         Me.lv_InsertOrder.TabIndex = 7
         Me.lv_InsertOrder.UseCompatibleStateImageBehavior = False
         Me.lv_InsertOrder.View = System.Windows.Forms.View.Details
@@ -824,7 +836,7 @@ Partial Class MainFrm
         '
         Me.BtnLoad.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnLoad.Location = New System.Drawing.Point(8, 23)
-        Me.BtnLoad.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnLoad.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnLoad.Name = "BtnLoad"
         Me.BtnLoad.Size = New System.Drawing.Size(69, 64)
         Me.BtnLoad.TabIndex = 11
@@ -836,7 +848,7 @@ Partial Class MainFrm
         Me.BtnUpload.BackColor = System.Drawing.Color.Orange
         Me.BtnUpload.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnUpload.Location = New System.Drawing.Point(163, 23)
-        Me.BtnUpload.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnUpload.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnUpload.Name = "BtnUpload"
         Me.BtnUpload.Size = New System.Drawing.Size(84, 64)
         Me.BtnUpload.TabIndex = 10
@@ -850,8 +862,8 @@ Partial Class MainFrm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel3.BackColor = System.Drawing.SystemColors.Info
         Me.Panel3.Controls.Add(Me.TXT_Log)
-        Me.Panel3.Location = New System.Drawing.Point(1164, 15)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel3.Location = New System.Drawing.Point(1164, 31)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(663, 201)
         Me.Panel3.TabIndex = 2
@@ -862,7 +874,7 @@ Partial Class MainFrm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TXT_Log.Location = New System.Drawing.Point(4, 4)
-        Me.TXT_Log.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TXT_Log.Margin = New System.Windows.Forms.Padding(4)
         Me.TXT_Log.Multiline = True
         Me.TXT_Log.Name = "TXT_Log"
         Me.TXT_Log.ReadOnly = True
@@ -874,7 +886,7 @@ Partial Class MainFrm
         '
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripProgressBar1, Me.TSSL1, Me.TSSL2})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 717)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 795)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 19, 0)
         Me.StatusStrip1.Size = New System.Drawing.Size(1827, 26)
@@ -907,20 +919,95 @@ Partial Class MainFrm
         Me.SIL.TransparentColor = System.Drawing.Color.Transparent
         Me.SIL.Images.SetKeyName(0, "PPAP.jpg")
         '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem, Me.ToolToolStripMenuItem, Me.LockToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(1827, 28)
+        Me.MenuStrip1.TabIndex = 4
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'AboutToolStripMenuItem
+        '
+        Me.AboutToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VersionToolStripMenuItem})
+        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(62, 24)
+        Me.AboutToolStripMenuItem.Text = "About"
+        '
+        'VersionToolStripMenuItem
+        '
+        Me.VersionToolStripMenuItem.Name = "VersionToolStripMenuItem"
+        Me.VersionToolStripMenuItem.Size = New System.Drawing.Size(132, 26)
+        Me.VersionToolStripMenuItem.Text = "Version"
+        '
+        'ToolToolStripMenuItem
+        '
+        Me.ToolToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CheckPNToolStripMenuItem, Me.UpdatePNFileToolStripMenuItem, Me.GetSWVToolStripMenuItem, Me.Material2PNDesToolStripMenuItem})
+        Me.ToolToolStripMenuItem.Name = "ToolToolStripMenuItem"
+        Me.ToolToolStripMenuItem.Size = New System.Drawing.Size(50, 24)
+        Me.ToolToolStripMenuItem.Text = "Tool"
+        '
+        'CheckPNToolStripMenuItem
+        '
+        Me.CheckPNToolStripMenuItem.Name = "CheckPNToolStripMenuItem"
+        Me.CheckPNToolStripMenuItem.Size = New System.Drawing.Size(191, 26)
+        Me.CheckPNToolStripMenuItem.Text = "Check PN"
+        '
+        'UpdatePNFileToolStripMenuItem
+        '
+        Me.UpdatePNFileToolStripMenuItem.Name = "UpdatePNFileToolStripMenuItem"
+        Me.UpdatePNFileToolStripMenuItem.Size = New System.Drawing.Size(191, 26)
+        Me.UpdatePNFileToolStripMenuItem.Text = "updatePNFile"
+        '
+        'GetSWVToolStripMenuItem
+        '
+        Me.GetSWVToolStripMenuItem.Name = "GetSWVToolStripMenuItem"
+        Me.GetSWVToolStripMenuItem.Size = New System.Drawing.Size(191, 26)
+        Me.GetSWVToolStripMenuItem.Text = "getSWV"
+        '
+        'Material2PNDesToolStripMenuItem
+        '
+        Me.Material2PNDesToolStripMenuItem.Name = "Material2PNDesToolStripMenuItem"
+        Me.Material2PNDesToolStripMenuItem.Size = New System.Drawing.Size(191, 26)
+        Me.Material2PNDesToolStripMenuItem.Text = "Material2PNDes"
+        '
+        'LockToolStripMenuItem
+        '
+        Me.LockToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LockCompressorToolStripMenuItem, Me.LockSparePartToolStripMenuItem})
+        Me.LockToolStripMenuItem.Name = "LockToolStripMenuItem"
+        Me.LockToolStripMenuItem.Size = New System.Drawing.Size(51, 24)
+        Me.LockToolStripMenuItem.Text = "Lock"
+        '
+        'LockCompressorToolStripMenuItem
+        '
+        Me.LockCompressorToolStripMenuItem.Name = "LockCompressorToolStripMenuItem"
+        Me.LockCompressorToolStripMenuItem.Size = New System.Drawing.Size(193, 26)
+        Me.LockCompressorToolStripMenuItem.Text = "LockCompressor"
+        '
+        'LockSparePartToolStripMenuItem
+        '
+        Me.LockSparePartToolStripMenuItem.Name = "LockSparePartToolStripMenuItem"
+        Me.LockSparePartToolStripMenuItem.Size = New System.Drawing.Size(193, 26)
+        Me.LockSparePartToolStripMenuItem.Text = "LockSparePart"
+        '
         'MainFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1827, 743)
+        Me.ClientSize = New System.Drawing.Size(1827, 821)
         Me.Controls.Add(Me.StatusStrip1)
+        Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.MainMenuStrip = Me.MenuStrip1
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "MainFrm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "DTC Real Production Planning"
+        Me.Text = "DTC Real Production Planning V2.0"
         CType(Me.FSW_Server, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
@@ -938,6 +1025,8 @@ Partial Class MainFrm
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         CType(Me.FSW_SparePart, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1002,4 +1091,15 @@ Partial Class MainFrm
     Friend WithEvents Button1 As Button
     Friend WithEvents LSP As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents VersionToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CheckPNToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents UpdatePNFileToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GetSWVToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Material2PNDesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LockToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LockCompressorToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LockSparePartToolStripMenuItem As ToolStripMenuItem
 End Class

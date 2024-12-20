@@ -1,5 +1,6 @@
 ﻿Imports Microsoft.VisualBasic.FileIO, System.IO, System.Threading
 Imports gListviewControl
+Imports Excel = Microsoft.Office.Interop.Excel
 
 Public Class MainFrm
     Private LogFile As StreamWriter
@@ -42,22 +43,98 @@ Public Class MainFrm
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
-
     End Sub
 
     Private Sub Form1_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         Try
             'If My.Computer.FileSystem.CurrentDirectory = X_Path Then
             TXT_Log.AppendText(Now & " 操作完毕！..." & vbCrLf)
-                FSW_Server.Dispose()
-                FSW_SparePart.Dispose()
-                LogFile.WriteLine(TXT_Log.Text)
-                LogFile.Close()
+            FSW_Server.Dispose()
+            FSW_SparePart.Dispose()
+            LogFile.WriteLine(TXT_Log.Text)
+            LogFile.Close()
             'End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
+    End Sub
+    Private Sub checkPN_Menu() Handles CheckPNToolStripMenuItem.Click
+        Dim your_pn As String = InputBox("输入你要查询的PN: ")
 
+        If isNewMaterialNumber(your_pn) Then
+            MsgBox(your_pn & ": New Material Number!")
+        Else
+            MsgBox(your_pn & "IS USED!")
+        End If
+    End Sub
+    Private Sub updatePN2Desc_Menu() Handles UpdatePNFileToolStripMenuItem.Click
+        Dim your_pn As String = InputBox("输入PN:")
+        Dim your_des As String = InputBox("输入描述:")
+        update_PN2Desc(your_pn, your_des, manual_mode:=True)
+    End Sub
+    Private Sub getSWV_menu() Handles GetSWVToolStripMenuItem.Click
+        Dim xlApp As Excel.Application
+        Dim xlWorkBooks As Excel.Workbooks
+        Dim xlWorkBook As Excel.Workbook
+        Dim xlWorkSheet As Excel.Worksheet
+        Dim xlRange, resRange As Excel.Range
+
+
+        Dim your_pn, swv_value, model_value, software_value, software_model As String
+
+        your_pn = InputBox("查询的PN:")
+
+        Dim mDirInfo As New System.IO.DirectoryInfo(".\01_NewOrders")
+        For Each xlFile In mDirInfo.GetFiles("*.xls")
+            If xlFile.FullName.Contains(your_pn) Then
+                TXT_Log.AppendText("try to open the xls file")
+
+                xlApp = Nothing
+                xlWorkBooks = Nothing
+                xlWorkBook = Nothing
+                xlWorkSheet = Nothing
+                xlRange = Nothing
+                xlApp = New Excel.Application With {
+                    .DisplayAlerts = False
+                }
+                xlWorkBooks = xlApp.Workbooks
+                xlWorkBook = xlWorkBooks.Open(xlFile.FullName())
+                xlWorkSheet = xlWorkBook.Worksheets(1)
+                xlRange = xlWorkSheet.UsedRange
+                xlApp.Visible = False
+
+                resRange = xlRange.Find("SWV")
+                Try
+                    swv_value = resRange.Value
+                    model_value = swv_value.Split(" ").GetValue(2)
+                    'software pn: 234556-134
+                    software_value = CType(xlRange(resRange.Row, resRange.Column - 1), Excel.Range).Value
+                    'get the s model:S314
+                    software_model = getSoftwareType(software_value)
+                    MsgBox("SWV:" & swv_value & Chr(13) &
+                       "Model: " & model_value & Chr(13) &
+                       "Software:" & software_value & Chr(13) &
+                       "SoftwareMode: " & software_model)
+                Catch ex As Exception
+                    MsgBox("解析SWV 的时候发生错误，造成Mes文件内容可能会出错！", vbOKCancel, "Error")
+                End Try
+                Exit For
+            End If
+        Next
+        Console.WriteLine("Finished")
+    End Sub
+    Private Sub material2PnDesc() Handles Material2PNDesToolStripMenuItem.Click
+        Dim your_input As String = InputBox("请输入从SAP下载的Excel F6单元格的Material:数据:")
+        Dim res As String = ExcelMaterial2PNDesc(your_input)
+        MsgBox(res)
+    End Sub
+
+    Private Sub about_menu() Handles VersionToolStripMenuItem.Click
+        MsgBox("
+        version:2.0.0
+        Date:2024-12-19
+        Modified by: Ke Tang
+        ")
     End Sub
 
 #Region "System File Watcher"
